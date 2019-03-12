@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="8-utf" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>Ozziewood Movies</title>
+        <link rel=stylesheet href="app.css">
+    
+      <link
+        href="https://fonts.googleapis.com/css?family=Lobster"
+        rel="stylesheet"
+      />
+    
+  </head>
+  <body>
+    <header class="header" id="header">
+      <a href="#" id="backButton" class="back-button is-hidden"
+        ><i class="fas fa-angle-left"></i
+      ></a>
+      <h1 class="page-title" id="page-title">Ozziewood Movies</h1>
+      <a href="#" id="filterBar" class="filter-button"
+        ><i class="fas fa-filter">filter</i></a
+      >
+      <a href="#" id="searchBar" class="search-button"
+        ><i class="fas fa-search">search</i></a
+      >
+    </header>
+    <div class="filters is-hidden" id="currentSearch">HI</div>
+    <div class="filters is-hidden" id="searchBarPane">
+      <div id="language-search-template" class="filters-section">
+        <h3 class="filters-section-title">Language</h3>
+        <div id="language-box">
+          <label class="language-checkbox">
+            <input
+              class="language-input-checkbox"
+              type="checkbox"
+              id="{{{inputValue}}}"
+              value="{{{inputValue}}}"
+            />
+            <span class="language">{{{inputValue}}}</span>
+          </label>
+        </div>
+      </div>
+      <div id="location-search-template" class="filters-section">
+        <h3 class="filters-section-title">Location</h3>
+        <div id="location-box">
+          <label class="city-checkbox">
+            <input
+              class="location-input-checkbox"
+              type="checkbox"
+              id="{{{inputValue}}}"
+              value="{{{inputValue}}}"
+            />
+            <span class="city">{{{inputValue}}}</span>
+          </label>
+        </div>
+      </div>
+      <button class="button save" id="searchSaveButton">Apply</button>
+      <button class="button delete" id="searchCancelButton">Reset</button>
+    </div>
+    <div class="search is-hidden" id="searchBarTextBox">
+      <input class="search-box" type="text" value="" id="searchText" />
+      <i class="fas fa-search search-icon">search</i>
+    </div>
+    <section class="movies" id="movies">
+      <ul class="movie-list" id="movielist">
+        <li class="movie" id="{{{_id}}}">
+          <div class="column-left">
+            <img
+              class="movie-poster"
+              src="{{{poster}}}"
+              alt="{{{title}}}"
+              
+            />
+          </div>
+          <div class="column-right">
+            <h2 class="movie-title">{{{title}}}</h2>
+            <div>
+              <p class="movie-rating">
+                {{{language}}} |
+                {{{rating}}}
+              </p>
+              <p class="movie-language"></p>
+              <div>
+                <p class="movie-duration">
+                  <i class="fas fa-hourglass-start"></i> {{{duration}}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+      <div class="movie-details is-hidden" id="moviedetails">
+            <iframe class="movie-trailer" id="{{{_id}}}" src="{{{trailer}}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+          
+            <div class="movie-details-info">
+                <div class="movie-detail-genre">
+                    <strong>Genre: </strong>{{{genres}}}
+                </div>          
+                <div class="movie-detail-duration">
+                    <strong>Duration: </strong>{{{duration}}}
+                    <i class="fas fa-hourglass-half movie-duration-time"></i>
+                </div>          
+                <div class="movie-detail-rating">{{{rating}}}</div>
+            </div>
+          
+            <div class="tab" id="tab">
+                <button class="movie-name" id="movieName">{{{title}}}</button>
+                <button class="movie-session-off" id="movieSession">Session</button>
+            </div>
+          
+            <div class="movie-details-story-container" id="moviedetailsstorycontainer">
+                <div class="movie-details-story" id="moviedetailsstory">
+          
+                    <div class="movie-details-title">{{{title}}}</div>          
+                    <div class="movie-detailed-script" id="moviedetailedscript">{{{synopsis}}}</div>          
+                    <div class="movie-details-title">
+                         <i class="fa fa-users movie-cast" id="moviecast" aria-hidden="true"></i>Starring
+                    </div>
+          
+                    <ul class="movie-cast-list" id="moviecastlist">
+                       {{{leadActors}}}
+                    </ul>
+                    <div class="movie-crew">Crew</div>
+                    <ul class="movie-crew-list" id="moviecrewlist">
+                        <li class="movie-crew-name" id="moviecrewname"><span class="genre-detail" id="genredetail">Director
+                                :</span>
+                            {{{director}}}</li>
+                        <li class="movie-crew-name" id="moviecrewname"><span class="genre-detail" id="genredetail">Music-Director
+                                :</span>
+                            {{{musicDirector}}}</li>
+                    </ul>
+          
+                </div>
+          
+                <div class="movie-details-session is-hidden" id="moviesdetailssession">{{{sessionData}}}</div>
+            </div>
+          </div>
+
+    
+  </body>
+  <script src="scripts/main.js"></script>
+  
+    <script
+      defer=""
+      src="https://use.fontawesome.com/releases/v5.4.1/js/all.js"
+      integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7"
+      crossorigin="anonymous"
+    ></script>
+  
+</html>
+<script src="app.js"></script>
+
+</html>
