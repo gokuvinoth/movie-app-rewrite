@@ -189,6 +189,7 @@ let locationList = [
 
   // method to render the movie Detail view with the data passed to this method.
   this.render_movie_detail = function(data) {
+    alert('in function');
     movieDetail.innerHTML = buildTemplate(movieDetailTemplate, data, 0, ``, ``);
     changeTitle(data[0].title);
     movies.classList.toggle("is-hidden");
@@ -282,6 +283,7 @@ let locationList = [
 
         // when clicked the Id is passed and render the detail view of the movie.
         case "movie":
+          alert(`in switch ${clickedElement.id}`);
           backButton.classList.toggle("is-hidden");
           render_movie_detail(
             APIData.filter(data => data._id === clickedElement.id)
